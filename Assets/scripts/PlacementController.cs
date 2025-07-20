@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlacementController : MonoBehaviour
 {
     public static PlacementController Instance { get; private set; }
+    public static PlacementController I { get; private set; }
 
     [Header("Tilemap References")]
     [SerializeField] private Tilemap oceanMap;   // Hydro only
@@ -174,5 +175,35 @@ public class PlacementController : MonoBehaviour
         txt.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         txt.color = orig;
+    }
+
+    public void InstantiateFromSO(ScriptableObject so, Vector3 pos, bool register)
+    {
+        // pick prefab
+        GameObject go;
+        if (so is EnergySourceSO es)
+            go = Instantiate(es.prefab, pos, Quaternion.identity);
+        else // Consumer
+            go = Instantiate((so as ConsumerBuildingSO).prefab, pos, Quaternion.identity);
+
+        // get grid coords
+        var cell = grid.WorldToCell(pos);
+        int x = cell.x, y = cell.y;
+
+        // add correct component, store CellX/Y, register
+        if (so is EnergySourceSO eso)
+        {
+            var inst = go.AddComponent<EnergySourceInstance>();
+            inst.data = eso;
+            inst.SetCell(x, y);
+            if (register) PowerManager.I.RegisterSource(inst);
+        }
+        else if (so is ConsumerBuildingSO cso)
+        {
+            var inst = go.AddComponent<ConsumerInstance>();
+            inst.data = cso;
+            inst.SetCell(x, y);
+            if (register) PowerManager.I.RegisterConsumer(inst);
+        }
     }
 }

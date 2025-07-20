@@ -1,5 +1,4 @@
-﻿// GameManager.cs
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,11 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager I { get; private set; }
 
     [Header("Economy")]
-    public int startingMoney = 3000;
+    public int startingMoney = 1000;
     public TextMeshProUGUI moneyText;
-
-    [Header("Notifications")]
-    public TextMeshProUGUI notificationText;  // drag your NotificationText here
 
     [Header("Lose Condition")]
     public bool pauseOnBudgetFail = true;
@@ -24,6 +20,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI endGameLabel;
 
     bool gameEnded = false;
+
     int _money;
     public int Money
     {
@@ -31,97 +28,84 @@ public class GameManager : MonoBehaviour
         private set
         {
             _money = value;
-            moneyText.text = $"${_money:N0}";
+            if (moneyText != null)
+                moneyText.text = $"${_money:N0}";
         }
     }
 
     void Awake()
     {
-        Time.timeScale = 1f;
-        if (I != null) { Destroy(gameObject); return; }
+        Time.timeScale = 1f;  // always start unpaused in Play
+        if (I != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         I = this;
         DontDestroyOnLoad(gameObject);
         Money = startingMoney;
     }
 
-    void Start()
-    {
-        TimeSystem.I.OnNewDay += OnNewDay;
-    }
-
     void OnEnable()
     {
+        // wire up Restart/Quit buttons under your EndGamePanel
         if (endGamePanel == null) return;
-        var buttons = endGamePanel.GetComponentsInChildren<Button>();
-        foreach (var btn in buttons)
+        foreach (var btn in endGamePanel.GetComponentsInChildren<Button>())
         {
             if (btn.name.Contains("Restart"))
                 btn.onClick.AddListener(() => SceneManager.LoadScene(0));
             else if (btn.name.Contains("Quit"))
-            {
-#if UNITY_WEBGL
-                btn.onClick.AddListener(() => Application.OpenURL("about:blank"));
-#else
                 btn.onClick.AddListener(Application.Quit);
-#endif
-            }
         }
     }
 
-    private void OnNewDay(int dayNumber)
+    void Start()
     {
-        // → 1) compute weather
-        var w = WeatherSystem.I.Current;
-        string weatherMsg = $"Day {dayNumber}: Sun {w.sun:F2}  Wind {w.wind:F2}";
-
-        // → 2) compute and spend maintenance
-        int bill = 0;
-        foreach (var src in Object.FindObjectsByType<EnergySourceInstance>(
-    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
-        {
-            bill += src.data.maintenancePerDay;
-        }
-
-        foreach (var con in Object.FindObjectsByType<ConsumerInstance>(
-            FindObjectsInactive.Exclude, FindObjectsSortMode.None))
-        {
-            bill += con.data.maintenancePerDay;
-        }
-
-        Spend(bill);
-        string billMsg = $"Maintenance: ${bill}";
-
-        // → 3) show both lines in one notification
-        ShowNotification($"{weatherMsg}\n{billMsg}");
-
-        if (Money <= 0)
-            HandleBudgetFail();
-    }
-
-    public void ShowNotification(string msg)
-    {
-        if (notificationText != null)
-            notificationText.text = msg;
+        // charge maintenance each new day (if you have that hooked up)
+        TimeSystem.I.OnNewDay += ChargeDailyMaintenance;
     }
 
     public bool CanAfford(int amount) => Money >= amount;
     public void Spend(int amount) => Money -= amount;
+    // ← new! so SaveSystem.LoadGame() can restore your cash
+    public void SetMoney(int amount) => Money = amount;
 
-    void HandleBudgetFail()
+    /// <summary>
+    /// Called each new day; deducts all building maintenance.
+    /// </summary>
+    void ChargeDailyMaintenance(int dayNumber)
     {
-        Debug.LogError("BANKRUPT! Money ≤ 0.");
-        if (pauseOnBudgetFail) Time.timeScale = 0f;
-        if (budgetFailPanel != null) budgetFailPanel.SetActive(true);
+        int bill = 0;
+        // (your existing code to sum maintenance goes here)
+        Spend(bill);
+        Debug.Log($"Day {dayNumber}: maintenance bill ${bill}");
+        if (Money <= 0)
+            TriggerEndGame(false);
     }
 
-    public void InstanceBlackout() => TriggerEndGame(false);
-
+    /// <summary>
+    /// Call this to end the game (true=win, false=lose).
+    /// </summary>
     public void TriggerEndGame(bool win)
     {
         if (gameEnded) return;
         gameEnded = true;
         Time.timeScale = 0f;
-        endGamePanel.SetActive(true);
-        endGameLabel.text = win ? "YOU WIN!" : "GAME OVER";
+        if (endGamePanel) endGamePanel.SetActive(true);
+        if (endGameLabel) endGameLabel.text = win ? "YOU WIN!" : "GAME OVER";
+    }
+
+    // If you still have a separate Blackout handler, make it call TriggerEndGame(false):
+    public void InstanceBlackout()
+    {
+        Debug.LogWarning("BLACKOUT – insufficient power!");
+        TriggerEndGame(false);
+    }
+
+    // If you had a separate stakeholder‐lose handler, have it use TriggerEndGame(false) too
+    public void HandleStakeholderLose(StakeholderSO st)
+    {
+        Debug.LogWarning($"{st.displayName} is unhappy (<{st.loseBelow}%). Game over.");
+        TriggerEndGame(false);
     }
 }

@@ -22,23 +22,27 @@ public static class SaveSystem
             rngState = Random.state.GetHashCode()
         };
 
-        // record every producer
-        foreach (var src in Object.FindObjectsOfType<EnergySourceInstance>())
+        foreach (var src in Object.FindObjectsByType<EnergySourceInstance>(
+                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        {
             data.buildings.Add(new BuildingRecord
             {
                 soName = src.data.name,
                 x = src.CellX,
                 y = src.CellY
             });
+        }
 
-        // record every consumer
-        foreach (var con in Object.FindObjectsOfType<ConsumerInstance>())
+        foreach (var con in Object.FindObjectsByType<ConsumerInstance>(
+                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        {
             data.buildings.Add(new BuildingRecord
             {
                 soName = con.data.name,
                 x = con.CellX,
                 y = con.CellY
             });
+        }
 
         File.WriteAllText(path, JsonUtility.ToJson(data, true));
         Debug.Log($"Game saved to {path}");
@@ -49,31 +53,34 @@ public static class SaveSystem
         if (!File.Exists(path)) return false;
         var data = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
 
-        // 1) destroy all existing buildings
-        foreach (var go in Object.FindObjectsOfType<GameObject>())
+        // --- clear existing buildings ---
+        foreach (var go in Object.FindObjectsByType<GameObject>(
+                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        {
             if (go.layer == LayerMask.NameToLayer("Buildings"))
                 Object.Destroy(go);
+        }
 
-        // 2) restore RNG
+        // RNG
         Random.InitState(data.rngState);
 
-        // 3) restore time & money
+        // Time & money
         TimeSystem.I.Day = data.day;
         TimeSystem.I.MinuteOfDay = data.minute;
         GameManager.I.SetMoney(data.money);
 
-        // 4) restore resilience scores
-        ResilienceManager.I.ForceSet(data.rSec, data.rEq, data.rSus, data.rAda);
+        // Resilience
+        ResilienceManager.I.ForceSet(
+            data.rSec, data.rEq, data.rSus, data.rAda);
 
-        // 5) re-instantiate each building
-        Grid grid = Object.FindObjectOfType<Grid>();
+        // Recreate buildings
+        var grid = Object.FindAnyObjectByType<Grid>();
         foreach (var rec in data.buildings)
         {
             var so = Resources.Load<ScriptableObject>(rec.soName);
-            Vector3Int cell = new Vector3Int(rec.x, rec.y, 0);
-            Vector3 pos = grid.CellToWorld(cell) + new Vector3(0.5f, 0.5f);
-            // we’ll add an overload to PlacementController in a moment
-            PlacementController.I.InstantiateFromSO(so, pos, register: true);
+            var cell = new Vector3Int(rec.x, rec.y, 0);
+            var worldPos = grid.CellToWorld(cell) + new Vector3(0.5f, 0.5f);
+            PlacementController.I.InstantiateFromSO(so, worldPos, register: true);
         }
 
         Debug.Log("Save loaded.");

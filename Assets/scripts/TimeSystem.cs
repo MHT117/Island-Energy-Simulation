@@ -10,8 +10,8 @@ public class TimeSystem : MonoBehaviour
     public float realSecondsPerGameMinute = 1f;
 
     public int MinutesPerDay = 1440;          // 24 h × 60
-    public int Day { get; private set; } = 1;
-    public int MinuteOfDay { get; private set; } = 0;   // 0–1439
+    public int Day { get; set; }           // <-- was private set
+    public int MinuteOfDay { get; set; }   // <-- was private set
 
     public event Action<int, int> OnMinuteTick;   // (day, minute)
     public event Action<int> OnNewDay;       // (day)

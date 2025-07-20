@@ -23,4 +23,13 @@ public class ResilienceManager : MonoBehaviour
         R_Ada += dAda;
         OnScoresChanged?.Invoke();
     }
+
+    public void ForceSet(float sec, float eq, float sus, float ada)
+    {
+        R_Sec = sec;
+        R_Eq = eq;
+        R_Sus = sus;
+        R_Ada = ada;
+        OnScoresChanged?.Invoke();
+    }
 }

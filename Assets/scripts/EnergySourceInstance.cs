@@ -3,7 +3,15 @@ using UnityEngine;
 public class EnergySourceInstance : MonoBehaviour
 {
     public EnergySourceSO data; // Assign this from the Inspector
+    public int CellX { get; private set; }
+    public int CellY { get; private set; }
 
+    // Called by PlacementController when instantiating
+    public void SetCell(int x, int y)
+    {
+        CellX = x;
+        CellY = y;
+    }
     public float CurrentOutputMW()
     {
         // Get today’s weather
