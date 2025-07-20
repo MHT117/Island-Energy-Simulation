@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
+  m_Name: WindTurbine_SO
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4625529954267164299, guid: 8dc463f8007f00d498e1af7e22eafd45, type: 3}
+  displayName: WindTurbine
+  sprite: {fileID: 2020046024715449471, guid: 04398630df2efe948bc9be370a04b35b, type: 3}
+  buildCost: 200
+  maintenanceDay: 2
+  baseOutputMW: 1.2
+  sec: 2
+  eq: 2
+  sus: 2
+  ada: 2

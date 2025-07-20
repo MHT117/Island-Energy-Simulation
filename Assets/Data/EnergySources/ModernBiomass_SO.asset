@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
+  m_Name: ModernBiomass_SO
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4625529954267164299, guid: 9e5814326a4d06947a3fb3135e7298ca, type: 3}
+  displayName: Modern Biomass
+  sprite: {fileID: -5485806406290453763, guid: 8fdca4218c5e31d4ab6f56d87b11a06d, type: 3}
+  buildCost: 100
+  maintenancePerDay: 10
+  maintenanceDay: 5
+  baseOutputMW: 1
+  sec: 1.6
+  eq: 2
+  sus: 1.8
+  ada: 1.5

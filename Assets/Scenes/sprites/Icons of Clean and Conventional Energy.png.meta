@@ -1,0 +1,1918 @@
+fileFormatVersion: 2
+guid: 0a1f0c72a0e36a644b2a146d9c783f08
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1623564521625554675
+    second: Icons of Clean and Conventional Energy_0
+  - first:
+      213: -4021501550753718192
+    second: Icons of Clean and Conventional Energy_1
+  - first:
+      213: 1920453700511570145
+    second: Icons of Clean and Conventional Energy_2
+  - first:
+      213: 6076897598203456521
+    second: Icons of Clean and Conventional Energy_3
+  - first:
+      213: 4499276286656028384
+    second: Icons of Clean and Conventional Energy_4
+  - first:
+      213: 3116300928077218251
+    second: Icons of Clean and Conventional Energy_5
+  - first:
+      213: 3317848503460789868
+    second: Icons of Clean and Conventional Energy_6
+  - first:
+      213: -3337391833444377663
+    second: Icons of Clean and Conventional Energy_7
+  - first:
+      213: -4557488831450712216
+    second: Icons of Clean and Conventional Energy_8
+  - first:
+      213: 1643562261263171403
+    second: Icons of Clean and Conventional Energy_9
+  - first:
+      213: -7675184993129082067
+    second: Icons of Clean and Conventional Energy_10
+  - first:
+      213: -3692223108307828501
+    second: Icons of Clean and Conventional Energy_11
+  - first:
+      213: -8432223705317532714
+    second: Icons of Clean and Conventional Energy_12
+  - first:
+      213: -2748762115970751669
+    second: Icons of Clean and Conventional Energy_13
+  - first:
+      213: 6974005991417343668
+    second: Icons of Clean and Conventional Energy_14
+  - first:
+      213: -2862306513285184746
+    second: Icons of Clean and Conventional Energy_15
+  - first:
+      213: -5957526502990166676
+    second: Icons of Clean and Conventional Energy_16
+  - first:
+      213: 5695108072518186953
+    second: Icons of Clean and Conventional Energy_17
+  - first:
+      213: 5174054551541425654
+    second: Icons of Clean and Conventional Energy_18
+  - first:
+      213: 3889286559254506517
+    second: Icons of Clean and Conventional Energy_19
+  - first:
+      213: -3530555063074159817
+    second: Icons of Clean and Conventional Energy_20
+  - first:
+      213: -5052319490292323011
+    second: Icons of Clean and Conventional Energy_21
+  - first:
+      213: 6252689410154021180
+    second: Icons of Clean and Conventional Energy_22
+  - first:
+      213: 6160537627299976501
+    second: Icons of Clean and Conventional Energy_23
+  - first:
+      213: -3000305638843180895
+    second: Icons of Clean and Conventional Energy_24
+  - first:
+      213: -2219292427309398484
+    second: Icons of Clean and Conventional Energy_25
+  - first:
+      213: 8652834435903448936
+    second: Icons of Clean and Conventional Energy_26
+  - first:
+      213: -1086068914719895872
+    second: Icons of Clean and Conventional Energy_27
+  - first:
+      213: -7338057413240016037
+    second: Icons of Clean and Conventional Energy_28
+  - first:
+      213: -1486737437126722731
+    second: Icons of Clean and Conventional Energy_29
+  - first:
+      213: -3994042977957583523
+    second: Icons of Clean and Conventional Energy_30
+  - first:
+      213: -6925893264661143529
+    second: Icons of Clean and Conventional Energy_31
+  - first:
+      213: 230748824759278068
+    second: Icons of Clean and Conventional Energy_32
+  - first:
+      213: 6893229638768814872
+    second: Icons of Clean and Conventional Energy_33
+  - first:
+      213: -4499038859756154450
+    second: Icons of Clean and Conventional Energy_34
+  - first:
+      213: 8399615579408017465
+    second: Icons of Clean and Conventional Energy_35
+  - first:
+      213: -1978646880061057683
+    second: Icons of Clean and Conventional Energy_36
+  - first:
+      213: 532737213084386868
+    second: Icons of Clean and Conventional Energy_37
+  - first:
+      213: -4010784536746712151
+    second: Icons of Clean and Conventional Energy_38
+  - first:
+      213: 3803516288433315871
+    second: Icons of Clean and Conventional Energy_39
+  - first:
+      213: -7761605780169759666
+    second: Icons of Clean and Conventional Energy_40
+  - first:
+      213: 8851828227186101833
+    second: Icons of Clean and Conventional Energy_41
+  - first:
+      213: 1768763713784856157
+    second: Icons of Clean and Conventional Energy_42
+  - first:
+      213: 3145964052037046946
+    second: Icons of Clean and Conventional Energy_43
+  - first:
+      213: 3268774277602422778
+    second: Icons of Clean and Conventional Energy_44
+  - first:
+      213: 2815390051210009733
+    second: Icons of Clean and Conventional Energy_45
+  - first:
+      213: 5171822055170812634
+    second: Icons of Clean and Conventional Energy_46
+  - first:
+      213: 884227237275316604
+    second: Icons of Clean and Conventional Energy_47
+  - first:
+      213: 5059452990397627683
+    second: Icons of Clean and Conventional Energy_48
+  - first:
+      213: -4805357425171643222
+    second: Icons of Clean and Conventional Energy_49
+  - first:
+      213: 6388174400996346204
+    second: Icons of Clean and Conventional Energy_50
+  - first:
+      213: -8359596240707783805
+    second: Icons of Clean and Conventional Energy_51
+  - first:
+      213: -9140697562455836787
+    second: Icons of Clean and Conventional Energy_52
+  - first:
+      213: 715217335061019771
+    second: Icons of Clean and Conventional Energy_53
+  - first:
+      213: 4159983636783615346
+    second: Icons of Clean and Conventional Energy_54
+  - first:
+      213: -6729125918843459886
+    second: Icons of Clean and Conventional Energy_55
+  - first:
+      213: -5038524173930909740
+    second: Icons of Clean and Conventional Energy_56
+  - first:
+      213: -2179140934294330185
+    second: Icons of Clean and Conventional Energy_57
+  - first:
+      213: 1033108562515911488
+    second: Icons of Clean and Conventional Energy_58
+  - first:
+      213: -1335040741389267558
+    second: Icons of Clean and Conventional Energy_59
+  - first:
+      213: 2326408781663522686
+    second: Icons of Clean and Conventional Energy_60
+  - first:
+      213: -8984985921305360129
+    second: Icons of Clean and Conventional Energy_61
+  - first:
+      213: -6785223013377270861
+    second: Icons of Clean and Conventional Energy_62
+  - first:
+      213: 805164211115165810
+    second: Icons of Clean and Conventional Energy_63
+  - first:
+      213: -4001669120961144125
+    second: Icons of Clean and Conventional Energy_64
+  - first:
+      213: 8732355287552517332
+    second: Icons of Clean and Conventional Energy_65
+  - first:
+      213: 4595109245240453443
+    second: Icons of Clean and Conventional Energy_66
+  - first:
+      213: 871601733093089857
+    second: Icons of Clean and Conventional Energy_67
+  - first:
+      213: -2170204958456225684
+    second: Icons of Clean and Conventional Energy_68
+  - first:
+      213: -3942277075940380573
+    second: Icons of Clean and Conventional Energy_69
+  - first:
+      213: -5535903064844934736
+    second: Icons of Clean and Conventional Energy_70
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 976
+        width: 1536
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01f49a6ba0f779e0800000000000000
+      internalID: -1623564521625554675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 1536
+        height: 735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05064ab75a1c038c0800000000000000
+      internalID: -4021501550753718192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1008
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e893923772d6aa10800000000000000
+      internalID: 1920453700511570145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 992
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c67553b2a755450800000000000000
+      internalID: 6076897598203456521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 974
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee987cc1f3a07e30800000000000000
+      internalID: 4499276286656028384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 808
+        width: 23
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc14347ee235f3b20800000000000000
+      internalID: 3116300928077218251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_6
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 941
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e775b92ad5b0e20800000000000000
+      internalID: 3317848503460789868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_7
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1008
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb124b4fc33fa1d0800000000000000
+      internalID: -3337391833444377663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_8
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 984
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867f19ded0c80c0c0800000000000000
+      internalID: -4557488831450712216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_9
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 976
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f34dc2b2b1fc610800000000000000
+      internalID: 1643562261263171403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_10
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1011
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23d123e9e34c7590800000000000000
+      internalID: -7675184993129082067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_11
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1005
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0c2dd25a692ccc0800000000000000
+      internalID: -3692223108307828501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_12
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 989
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db9be14739bafa80800000000000000
+      internalID: -8432223705317532714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_13
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 979
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4323894b6f6ad9d0800000000000000
+      internalID: -2748762115970751669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_14
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 993
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be60e3df75a8c060800000000000000
+      internalID: 6974005991417343668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_15
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 987
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613895d246b0748d0800000000000000
+      internalID: -2862306513285184746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 182
+        width: 647
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65cb49b53d925da0800000000000000
+      internalID: -5957526502990166676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_17
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 174
+        width: 313
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7f7e33e96190f40800000000000000
+      internalID: 5695108072518186953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_18
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 352
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5ae19833fedc740800000000000000
+      internalID: 5174054551541425654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_19
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 349
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ce012f48589f530800000000000000
+      internalID: 3889286559254506517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_20
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 301
+        width: 11
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733028530e2f00fc0800000000000000
+      internalID: -3530555063074159817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_21
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 175
+        width: 303
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3de751213e82e9b0800000000000000
+      internalID: -5052319490292323011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_22
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 335
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31c31fe3e306c650800000000000000
+      internalID: 6252689410154021180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_23
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 336
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53594a40550ae7550800000000000000
+      internalID: 6160537627299976501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_24
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 339
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a89623fae5cc56d0800000000000000
+      internalID: -3000305638843180895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_25
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 331
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c264281bb4d7331e0800000000000000
+      internalID: -2219292427309398484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_26
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 322
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867ea44231b051870800000000000000
+      internalID: 8652834435903448936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_27
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 318
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cec68883128de0f0800000000000000
+      internalID: -1086068914719895872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_28
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 302
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53386e49abf92a90800000000000000
+      internalID: -7338057413240016037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_29
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 310
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b79c19d2c0e5be0800000000000000
+      internalID: -1486737437126722731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_30
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 296
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55e139a21f4298c0800000000000000
+      internalID: -3994042977957583523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_31
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 248
+        width: 17
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7102a9f45c842ef90800000000000000
+      internalID: -6925893264661143529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_32
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 277
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f99d1465d8c33300800000000000000
+      internalID: 230748824759278068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_33
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 216
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b6206a5dba9af50800000000000000
+      internalID: 6893229638768814872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_34
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 255
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea15e857ef33091c0800000000000000
+      internalID: -4499038859756154450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_35
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 187
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938a37ccddd619470800000000000000
+      internalID: 8399615579408017465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_36
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 187
+        width: 43
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65960a552f6a84e0800000000000000
+      internalID: -1978646880061057683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_37
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 187
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436c6883ca9a46700800000000000000
+      internalID: 532737213084386868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_38
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 255
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a32590c6b4d658c0800000000000000
+      internalID: -4010784536746712151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_39
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 192
+        width: 81
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10ea7599edc8c430800000000000000
+      internalID: 3803516288433315871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_40
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 255
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44ec5a6aac394490800000000000000
+      internalID: -7761605780169759666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_41
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 225
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e0436afd208da70800000000000000
+      internalID: 8851828227186101833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_42
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 247
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e3fb3f939eb8810800000000000000
+      internalID: 1768763713784856157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_43
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 241
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a211d523a5b8ab20800000000000000
+      internalID: 3145964052037046946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_44
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 225
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff2d6303e40d5d20800000000000000
+      internalID: 3268774277602422778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_45
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 229
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c9a82c556421720800000000000000
+      internalID: 2815390051210009733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_46
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 237
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adaacf7f1c006c740800000000000000
+      internalID: 5171822055170812634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_47
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 225
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71358accf7654c00800000000000000
+      internalID: 884227237275316604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_48
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 221
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d307a40b9c63640800000000000000
+      internalID: 5059452990397627683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1536
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4cbd5b1e0ff4db0800000000000000
+      internalID: -4805357425171643222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_50
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 200
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5981ae85ca57a850800000000000000
+      internalID: 6388174400996346204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_51
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 187
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383fbe6928fbcfb80800000000000000
+      internalID: -8359596240707783805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_52
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 205
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d877a861ff7b52180800000000000000
+      internalID: -9140697562455836787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_53
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 193
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c73897066fce900800000000000000
+      internalID: 715217335061019771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_54
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 186
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dccedb31b3bb930800000000000000
+      internalID: 4159983636783615346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_55
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 178
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6267611a75d92a0800000000000000
+      internalID: -6729125918843459886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_56
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 171
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df21a485f0931ab0800000000000000
+      internalID: -5038524173930909740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_57
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 166
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4afd7add222c1e0800000000000000
+      internalID: -2179140934294330185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_58
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 165
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043ec2393c6565e00800000000000000
+      internalID: 1033108562515911488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_59
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 46
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d81d0e48bf87de0800000000000000
+      internalID: -1335040741389267558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_60
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 35
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f47690670194020800000000000000
+      internalID: 2326408781663522686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_61
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 34
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff845b8b8eaee4380800000000000000
+      internalID: -8984985921305360129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_62
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 29
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb97d57e9b06d1a0800000000000000
+      internalID: -6785223013377270861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_63
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 24
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 278806585948c2b00800000000000000
+      internalID: 805164211115165810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_64
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 21
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca1670e2273778c0800000000000000
+      internalID: -4001669120961144125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_65
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 13
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d462173ede8f2970800000000000000
+      internalID: 8732355287552517332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_66
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349abaa338b15cf30800000000000000
+      internalID: 4595109245240453443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_67
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142e0a6882d881c00800000000000000
+      internalID: 871601733093089857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_68
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60ec69a612e1e1e0800000000000000
+      internalID: -2170204958456225684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_69
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 3
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3607862f2e73a49c0800000000000000
+      internalID: -3942277075940380573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons of Clean and Conventional Energy_70
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 0
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1ebe43e758c23b0800000000000000
+      internalID: -5535903064844934736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

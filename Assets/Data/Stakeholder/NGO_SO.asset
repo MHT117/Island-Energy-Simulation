@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b9059ecaec3884ea360ba87dc9f929, type: 3}
+  m_Name: NGO_SO
+  m_EditorClassIdentifier: 
+  displayName: NGO
+  icon: {fileID: 3164077253583826675, guid: 519b54b5ec66dcc4ab7722332bb5b307, type: 3}
+  wSec: 0.1
+  wEq: 0.3
+  wSus: 0.4
+  wAda: 0.2
+  loseBelow: 30
+  winAt: 70
+  satisfaction: 12.300001
