@@ -32,9 +32,32 @@ public class GameManager : MonoBehaviour
                 moneyText.text = $"${_money:N0}";
         }
     }
+    // this is the save game trigger
+    void Update()
+    {
+        // existing code…
+
+        // ─── Quick‐save key ───────────────────────────────────────────
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            SaveSystem.SaveGame();
+            Debug.Log("Game manually saved.");
+        }
+    }
+    // save game on quite
+    void OnApplicationQuit()
+    {
+        // Auto‐save when the player closes or reloads the game
+        SaveSystem.SaveGame();
+        Debug.Log("Game auto‐saved on quit.");
+    }
 
     void Awake()
     {
+        // cap at 60 FPS
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+        // ensure we start unpaused
         Time.timeScale = 1f;  // always start unpaused in Play
         if (I != null)
         {

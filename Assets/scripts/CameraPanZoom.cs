@@ -34,7 +34,7 @@ public class CameraPanZoom : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         if (!cam.orthographic)
-            Debug.LogWarning("CameraPanZoom expects an orthographic camera!");
+           // Debug.LogWarning("CameraPanZoom expects an orthographic camera!");
 
         // ─── START AT MAX ZOOM ──────────────────────────────────────────
         cam.orthographicSize = maxZoom;
@@ -60,7 +60,7 @@ public class CameraPanZoom : MonoBehaviour
         //this if function is for debugging purposes
         if (mouse.x <= screenEdgeThickness)
         {
-            Debug.Log($"Pan Left: mouse.x={mouse.x}, edge={screenEdgeThickness}");
+            //Debug.Log($"Pan Left: mouse.x={mouse.x}, edge={screenEdgeThickness}");
             pos.x -= panSpeed * Time.deltaTime;
         }
 
