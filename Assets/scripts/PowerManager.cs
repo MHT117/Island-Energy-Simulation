@@ -17,6 +17,16 @@ public class PowerManager : MonoBehaviour
     readonly List<EnergySourceInstance> producers = new();
     readonly List<ConsumerInstance> consumers = new();
 
+    public IReadOnlyList<EnergySourceInstance> Producers => producers;
+    public event System.Action<int, int> OnMinuteTick;
+
+    void OnMinute()
+    {
+        // existing minute logic...
+        OnMinuteTick?.Invoke(TimeSystem.I.Day, TimeSystem.I.MinuteOfDay);
+    }
+
+
     void Awake()
     {
         if (I != null && I != this) { Destroy(gameObject); return; }
