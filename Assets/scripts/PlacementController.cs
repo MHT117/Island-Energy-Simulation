@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class PlacementController : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlacementController : MonoBehaviour
     [SerializeField] private Tilemap oceanMap;   // Hydro only
     [SerializeField] private Tilemap groundMap;  // Solar, Wind, Biomass, etc.
     [SerializeField] private Tilemap cityMap;    // Houses, Shops
+
+    [Header("Floating Text Prefab")]
+    [SerializeField] private FloatTextUI floatTextPrefab;   // drag your FloatText prefab here
+    [SerializeField] private Canvas uiCanvas;          // drag your root Canvas here
 
     [Header("Scene refs")]
     [SerializeField] private Grid grid;
@@ -26,6 +31,7 @@ public class PlacementController : MonoBehaviour
     {
         if (Instance != null && Instance != this) Destroy(gameObject);
         Instance = this;
+        I = this;
     }
 
     public void StartPlacing(EnergySourceSO so)
@@ -67,7 +73,8 @@ public class PlacementController : MonoBehaviour
         // PLACEMENT MODE
         if (currentSourceSO != null || currentConsumerSO != null)
         {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
 
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cell = grid.WorldToCell(mouseWorld);
@@ -77,25 +84,24 @@ public class PlacementController : MonoBehaviour
             // Basic blocked-check
             bool invalid = Physics2D.OverlapPoint(centre, blockedMask);
 
-            // Then layer‐specific rules
+            // Then layer-specific rules
             if (!invalid)
             {
                 if (currentSourceSO != null)
                 {
                     bool isHydro = currentSourceSO.displayName.ToLower().Contains("hydro");
-                    if (isHydro)
-                        invalid = oceanMap == null || !oceanMap.HasTile(cell);
-                    else
-                        invalid = groundMap == null || !groundMap.HasTile(cell);
+                    invalid = isHydro
+                        ? (oceanMap == null || !oceanMap.HasTile(cell))
+                        : (groundMap == null || !groundMap.HasTile(cell));
                 }
                 else
                 {
-                    invalid = cityMap == null || !cityMap.HasTile(cell);
+                    invalid = (cityMap == null || !cityMap.HasTile(cell));
                 }
             }
 
-            var sr = ghost.GetComponent<SpriteRenderer>();
-            sr.color = invalid
+            var ghostSr = ghost.GetComponent<SpriteRenderer>();
+            ghostSr.color = invalid
                 ? new Color(1, 0, 0, ghostAlpha)
                 : new Color(1, 1, 1, ghostAlpha);
 
@@ -104,6 +110,7 @@ public class PlacementController : MonoBehaviour
             {
                 if (currentSourceSO != null)
                 {
+                    // Instantiate source
                     var go = Instantiate(currentSourceSO.prefab, centre, Quaternion.identity);
                     GameManager.I.Spend(currentSourceSO.buildCost);
                     var src = go.AddComponent<EnergySourceInstance>();
@@ -116,9 +123,17 @@ public class PlacementController : MonoBehaviour
                         currentSourceSO.sus,
                         currentSourceSO.ada
                     );
+
+                    // --- Floating output text ---
+                    Vector3 worldPos = go.transform.position + Vector3.up * 0.5f;
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    var ftxt = Instantiate(floatTextPrefab, uiCanvas.transform);
+                    ftxt.GetComponent<RectTransform>().position = screenPos;
+                    ftxt.Init($"{src.CurrentOutputMW():0.0} MW");
                 }
                 else
                 {
+                    // Instantiate consumer
                     var go = Instantiate(currentConsumerSO.prefab, centre, Quaternion.identity);
                     GameManager.I.Spend(currentConsumerSO.buildCost);
                     var con = go.AddComponent<ConsumerInstance>();
@@ -165,7 +180,8 @@ public class PlacementController : MonoBehaviour
     {
         currentSourceSO = null;
         currentConsumerSO = null;
-        if (ghost) Destroy(ghost);
+        if (ghost)
+            Destroy(ghost);
     }
 
     private IEnumerator FlashMoneyLabel()
@@ -188,21 +204,17 @@ public class PlacementController : MonoBehaviour
 
         // get grid coords
         var cell = grid.WorldToCell(pos);
-        int x = cell.x, y = cell.y;
 
-        // add correct component, store CellX/Y, register
         if (so is EnergySourceSO eso)
         {
             var inst = go.AddComponent<EnergySourceInstance>();
             inst.data = eso;
-            inst.SetCell(x, y);
             if (register) PowerManager.I.RegisterSource(inst);
         }
         else if (so is ConsumerBuildingSO cso)
         {
             var inst = go.AddComponent<ConsumerInstance>();
             inst.data = cso;
-            inst.SetCell(x, y);
             if (register) PowerManager.I.RegisterConsumer(inst);
         }
     }

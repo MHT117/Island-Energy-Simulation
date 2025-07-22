@@ -89239,6 +89239,8 @@ MonoBehaviour:
   oceanMap: {fileID: 746810166}
   groundMap: {fileID: 1914389686}
   cityMap: {fileID: 360755887}
+  floatTextPrefab: {fileID: 4351565740936651500, guid: 8dd8acffff6c8b54ca0f64923981dd30, type: 3}
+  uiCanvas: {fileID: 1535641149}
   grid: {fileID: 16997337}
   blockedMask:
     serializedVersion: 2
