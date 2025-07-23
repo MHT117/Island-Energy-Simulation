@@ -6,7 +6,6 @@ using TMPro;
 
 public class PlacementController : MonoBehaviour
 {
-    public static PlacementController Instance { get; private set; }
     public static PlacementController I { get; private set; }
 
     [Header("Tilemap References")]
@@ -15,13 +14,18 @@ public class PlacementController : MonoBehaviour
     [SerializeField] private Tilemap cityMap;    // Houses, Shops
 
     [Header("Floating Text Prefab")]
-    [SerializeField] private FloatTextUI floatTextPrefab;   // drag your FloatText prefab here
-    [SerializeField] private Canvas uiCanvas;          // drag your root Canvas here
+    [SerializeField] private FloatTextUI floatTextPrefab;
+    [SerializeField] private Canvas uiCanvas;
 
     [Header("Scene refs")]
     [SerializeField] private Grid grid;
     [SerializeField] private LayerMask blockedMask;
     [SerializeField] private float ghostAlpha = 0.6f;
+
+    [Header("Placement Limit")]
+    [Tooltip("0 = unlimited")]
+    public int maxPlantsAllowed = 0;
+
 
     private EnergySourceSO currentSourceSO;
     private ConsumerBuildingSO currentConsumerSO;
@@ -29,8 +33,7 @@ public class PlacementController : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        Instance = this;
+        if (I != null && I != this) Destroy(gameObject);
         I = this;
     }
 
@@ -39,6 +42,14 @@ public class PlacementController : MonoBehaviour
         CancelPlacement();
         currentSourceSO = so;
         currentConsumerSO = null;
+
+        // ─── Enforce per-type limit ───────────────────────────────────
+        if (so.maxPlantsAllowed > 0)
+        {
+            int existing = PowerManager.I.CountType(so);
+            if (existing >= so.maxPlantsAllowed)
+                return;  // refuse placement (silent)
+        }
 
         if (!GameManager.I.CanAfford(so.buildCost))
         {
@@ -54,7 +65,6 @@ public class PlacementController : MonoBehaviour
         CancelPlacement();
         currentConsumerSO = cs;
         currentSourceSO = null;
-
         CreateGhost(cs.sprite, cs.prefab.transform.localScale);
     }
 
@@ -70,47 +80,43 @@ public class PlacementController : MonoBehaviour
 
     void Update()
     {
-        // PLACEMENT MODE
         if (currentSourceSO != null || currentConsumerSO != null)
         {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            if (EventSystem.current.IsPointerOverGameObject()) return;
 
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cell = grid.WorldToCell(mouseWorld);
-            Vector3 centre = grid.CellToWorld(cell) + new Vector3(0.5f, 0.5f);
+            var mouseW = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var cell = grid.WorldToCell(mouseW);
+            var centre = grid.CellToWorld(cell) + new Vector3(0.5f, 0.5f);
             ghost.transform.position = centre;
 
             // Basic blocked-check
             bool invalid = Physics2D.OverlapPoint(centre, blockedMask);
 
-            // Then layer-specific rules
+            // Layer-specific rules
             if (!invalid)
             {
                 if (currentSourceSO != null)
                 {
                     bool isHydro = currentSourceSO.displayName.ToLower().Contains("hydro");
                     invalid = isHydro
-                        ? (oceanMap == null || !oceanMap.HasTile(cell))
-                        : (groundMap == null || !groundMap.HasTile(cell));
+                        ? !oceanMap.HasTile(cell)
+                        : !groundMap.HasTile(cell);
                 }
                 else
                 {
-                    invalid = (cityMap == null || !cityMap.HasTile(cell));
+                    invalid = !cityMap.HasTile(cell);
                 }
             }
 
-            var ghostSr = ghost.GetComponent<SpriteRenderer>();
-            ghostSr.color = invalid
-                ? new Color(1, 0, 0, ghostAlpha)
-                : new Color(1, 1, 1, ghostAlpha);
+            ghost.GetComponent<SpriteRenderer>().color =
+                invalid ? new Color(1, 0, 0, ghostAlpha)
+                        : new Color(1, 1, 1, ghostAlpha);
 
-            // Place on left-click
+            // Place on click
             if (Input.GetMouseButtonDown(0) && !invalid)
             {
                 if (currentSourceSO != null)
                 {
-                    // Instantiate source
                     var go = Instantiate(currentSourceSO.prefab, centre, Quaternion.identity);
                     GameManager.I.Spend(currentSourceSO.buildCost);
                     var src = go.AddComponent<EnergySourceInstance>();
@@ -124,7 +130,7 @@ public class PlacementController : MonoBehaviour
                         currentSourceSO.ada
                     );
 
-                    // --- Floating output text ---
+                    // Floating text
                     Vector3 worldPos = go.transform.position + Vector3.up * 0.5f;
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     var ftxt = Instantiate(floatTextPrefab, uiCanvas.transform);
@@ -133,7 +139,6 @@ public class PlacementController : MonoBehaviour
                 }
                 else
                 {
-                    // Instantiate consumer
                     var go = Instantiate(currentConsumerSO.prefab, centre, Quaternion.identity);
                     GameManager.I.Spend(currentConsumerSO.buildCost);
                     var con = go.AddComponent<ConsumerInstance>();
@@ -145,22 +150,22 @@ public class PlacementController : MonoBehaviour
                 return;
             }
 
-            // Cancel placement
+            // Cancel placement with right-click
             if (Input.GetMouseButtonDown(1))
             {
                 CancelPlacement();
                 return;
             }
         }
-        // DELETE MODE
         else if (Input.GetMouseButtonDown(1))
         {
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero, 0f, blockedMask);
-            if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Buildings"))
+            // Delete mode
+            var mouseW = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var hit = Physics2D.Raycast(mouseW, Vector2.zero, 0f, blockedMask);
+            if (hit.collider != null &&
+                hit.collider.gameObject.layer == LayerMask.NameToLayer("Buildings"))
             {
-                var target = hit.collider.gameObject;
-                var src = target.GetComponent<EnergySourceInstance>();
+                var src = hit.collider.GetComponent<EnergySourceInstance>();
                 if (src != null)
                 {
                     ResilienceManager.I.AddScores(
@@ -171,7 +176,7 @@ public class PlacementController : MonoBehaviour
                     );
                     GameManager.I.Spend(-src.data.buildCost);
                 }
-                Destroy(target);
+                Destroy(hit.collider.gameObject);
             }
         }
     }
@@ -180,8 +185,7 @@ public class PlacementController : MonoBehaviour
     {
         currentSourceSO = null;
         currentConsumerSO = null;
-        if (ghost)
-            Destroy(ghost);
+        if (ghost) Destroy(ghost);
     }
 
     private IEnumerator FlashMoneyLabel()
@@ -195,26 +199,19 @@ public class PlacementController : MonoBehaviour
 
     public void InstantiateFromSO(ScriptableObject so, Vector3 pos, bool register)
     {
-        // pick prefab
         GameObject go;
-        if (so is EnergySourceSO es)
-            go = Instantiate(es.prefab, pos, Quaternion.identity);
-        else // Consumer
-            go = Instantiate((so as ConsumerBuildingSO).prefab, pos, Quaternion.identity);
-
-        // get grid coords
-        var cell = grid.WorldToCell(pos);
-
         if (so is EnergySourceSO eso)
         {
+            go = Instantiate(eso.prefab, pos, Quaternion.identity);
             var inst = go.AddComponent<EnergySourceInstance>();
             inst.data = eso;
             if (register) PowerManager.I.RegisterSource(inst);
         }
-        else if (so is ConsumerBuildingSO cso)
+        else
         {
+            go = Instantiate((so as ConsumerBuildingSO).prefab, pos, Quaternion.identity);
             var inst = go.AddComponent<ConsumerInstance>();
-            inst.data = cso;
+            inst.data = (ConsumerBuildingSO)so;
             if (register) PowerManager.I.RegisterConsumer(inst);
         }
     }

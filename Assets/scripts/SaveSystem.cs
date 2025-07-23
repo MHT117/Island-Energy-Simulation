@@ -4,26 +4,43 @@ using System.Collections.Generic;
 
 public static class SaveSystem
 {
-    static string path => Path.Combine(Application.persistentDataPath, "islandSave.json");
+    // at top of SaveSystem class, under PathForSlot:
+    public static void SaveGame() => SaveGame(1);
+    public static bool LoadGame() => LoadGame(1);
 
-    public static void SaveGame()
+    // helper to name each slot file
+    static string PathForSlot(int slot) =>
+        Path.Combine(Application.persistentDataPath, $"islandSave_slot{slot}.json");
+
+    public static bool HasSave(int slot) =>
+        File.Exists(PathForSlot(slot));
+
+    public static void DeleteSave(int slot)
+    {
+        var path = PathForSlot(slot);
+        if (File.Exists(path)) File.Delete(path);
+    }
+
+    public static void SaveGame(int slot)
     {
         var data = new SaveData
         {
             day = TimeSystem.I.Day,
             minute = TimeSystem.I.MinuteOfDay,
             money = GameManager.I.Money,
-
             rSec = ResilienceManager.I.R_Sec,
             rEq = ResilienceManager.I.R_Eq,
             rSus = ResilienceManager.I.R_Sus,
             rAda = ResilienceManager.I.R_Ada,
-
             rngState = Random.state.GetHashCode()
         };
 
-        foreach (var src in Object.FindObjectsByType<EnergySourceInstance>(
-                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        // record all energy sources
+        var sources = Object.FindObjectsByType<EnergySourceInstance>(
+            FindObjectsInactive.Exclude,
+            FindObjectsSortMode.None
+        );
+        foreach (var src in sources)
         {
             data.buildings.Add(new BuildingRecord
             {
@@ -33,8 +50,12 @@ public static class SaveSystem
             });
         }
 
-        foreach (var con in Object.FindObjectsByType<ConsumerInstance>(
-                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        // record all consumers
+        var consumers = Object.FindObjectsByType<ConsumerInstance>(
+            FindObjectsInactive.Exclude,
+            FindObjectsSortMode.None
+        );
+        foreach (var con in consumers)
         {
             data.buildings.Add(new BuildingRecord
             {
@@ -44,51 +65,55 @@ public static class SaveSystem
             });
         }
 
-        File.WriteAllText(path, JsonUtility.ToJson(data, true));
-        Debug.Log($"Game saved to {path}");
+        var json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(PathForSlot(slot), json);
+        Debug.Log($"Game saved to {PathForSlot(slot)}");
     }
 
-    public static bool LoadGame()
+    public static bool LoadGame(int slot)
     {
+        var path = PathForSlot(slot);
         if (!File.Exists(path)) return false;
-        var data = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
 
-        // --- clear existing buildings ---
-        foreach (var go in Object.FindObjectsByType<GameObject>(
-                    FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        var data = JsonUtility.FromJson<SaveData>(
+            File.ReadAllText(path)
+        );
+
+        // clear existing buildings
+        var allGOs = Object.FindObjectsByType<GameObject>(
+            FindObjectsInactive.Exclude,
+            FindObjectsSortMode.None
+        );
+        foreach (var go in allGOs)
         {
             if (go.layer == LayerMask.NameToLayer("Buildings"))
                 Object.Destroy(go);
         }
 
-        // RNG
+        // restore RNG
         Random.InitState(data.rngState);
 
-        // Time & money
+        // restore time & money
         TimeSystem.I.Day = data.day;
         TimeSystem.I.MinuteOfDay = data.minute;
         GameManager.I.SetMoney(data.money);
 
-        // Resilience
+        // restore resilience
         ResilienceManager.I.ForceSet(
-            data.rSec, data.rEq, data.rSus, data.rAda);
+            data.rSec, data.rEq, data.rSus, data.rAda
+        );
 
-        // Recreate buildings
+        // recreate buildings
         var grid = Object.FindAnyObjectByType<Grid>();
         foreach (var rec in data.buildings)
         {
             var so = Resources.Load<ScriptableObject>(rec.soName);
             var cell = new Vector3Int(rec.x, rec.y, 0);
-            var worldPos = grid.CellToWorld(cell) + new Vector3(0.5f, 0.5f);
-            PlacementController.I.InstantiateFromSO(so, worldPos, register: true);
+            var worldPos = grid.CellToWorld(cell) + Vector3.one * 0.5f;
+            PlacementController.I.InstantiateFromSO(so, worldPos, true);
         }
 
-        Debug.Log("Save loaded.");
+        Debug.Log($"Loaded save from {path}");
         return true;
-    }
-
-    public static void DeleteSave()
-    {
-        if (File.Exists(path)) File.Delete(path);
     }
 }

@@ -34,12 +34,6 @@ public class PauseMenuController : MonoBehaviour
     public void BtnSettings() { settingsPanel.SetActive(true); }
     public void BtnSave() { savePanel.SetActive(true); }
     public void BtnLoad() { loadPanel.SetActive(true); }
-    public void BtnQuit()
-    {
-#if UNITY_WEBGL
-        SceneManager.LoadScene("MainMenu");
-#else
-        Application.Quit();
-#endif
-    }
+    public void BtnQuit() => SceneManager.LoadScene("MainMenu");
+
 }
