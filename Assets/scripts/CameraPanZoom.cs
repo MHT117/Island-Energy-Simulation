@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 
 [RequireComponent(typeof(Camera))]
 public class CameraPanZoom : MonoBehaviour
