@@ -22,7 +22,9 @@ public class WeatherSystem : MonoBehaviour
 
     void Start()
     {
+        // generate day 1 immediately
         GenerateNewDay(1);
+        // then on every new-day tick
         TimeSystem.I.OnNewDay += GenerateNewDay;
     }
 
@@ -30,8 +32,18 @@ public class WeatherSystem : MonoBehaviour
     {
         today.sun = Random.Range(minSun, maxSun);
         today.wind = Random.Range(minWind, maxWind);
-        Debug.Log($"Day {dayNumber} Sun {today.sun:F2} Wind {today.wind:F2}");
+
+        string msg = $"Day {dayNumber}  Sun {today.sun:F2}  Wind {today.wind:F2}";
+        Debug.Log(msg);
+
+        // new, warning-free lookup:
+        //var notifier = Object.FindAnyObjectByType<NotificationUI>();
+        //if (notifier != null)
+            //notifier.Show(msg);
     }
 
+    /// <summary>
+    /// Other systems can read the current weather this way.
+    /// </summary>
     public WeatherSnapshot Current => today;
 }

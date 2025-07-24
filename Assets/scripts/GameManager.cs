@@ -100,27 +100,32 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void ChargeDailyMaintenance(int dayNumber)
     {
+        // ---- calculate maintenance ----
         int bill = 0;
-
-        // sum maintenance from all energy sources
         foreach (var src in Object.FindObjectsByType<EnergySourceInstance>(
-                     FindObjectsInactive.Exclude, FindObjectsSortMode.None))
-        {
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None))
             bill += src.data.maintenancePerDay;
-        }
-
-        // sum maintenance from all consumers
         foreach (var con in Object.FindObjectsByType<ConsumerInstance>(
-                     FindObjectsInactive.Exclude, FindObjectsSortMode.None))
-        {
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None))
             bill += con.data.maintenancePerDay;
-        }
 
-        // deduct and report
+        // ---- deduct cash ----
         Spend(bill);
-        Debug.Log($"Day {dayNumber}: maintenance bill ${bill}");
 
-        // check for bankruptcy
+        // ---- pull in the weather snapshot ----
+        var w = WeatherSystem.I.Current;
+
+        // ---- build one combined message ----
+        string toast = $"Day {dayNumber}:  Sun {w.sun:F2}  Wind {w.wind:F2}\n" +
+                       $"Maintenance bill ${bill}";
+
+        Debug.Log(toast);
+
+        // ---- show on-screen ----
+        if (NotificationUI.I != null)
+            NotificationUI.I.Show(toast);
+
+        // ---- bankruptcy check ----
         if (Money <= 0)
             TriggerEndGame(false);
     }
