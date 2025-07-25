@@ -94093,7 +94093,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 600, y: 60}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!225 &1391771446
 CanvasGroup:
@@ -94219,8 +94219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 1391771447}
-  displaySeconds: 3
-  fadeSeconds: 0.5
+  fadeTime: 0.3
+  holdTime: 2
 --- !u!1 &1402463640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2975089529395299691, guid: 0d6ab696192940640a8ad60369efca93, type: 3}

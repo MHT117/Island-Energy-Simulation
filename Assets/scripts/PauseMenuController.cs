@@ -20,14 +20,26 @@ public class PauseMenuController : MonoBehaviour
     {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0 : 1;
-        pausePanel.SetActive(isPaused);
-        if (!isPaused)
+
+        // Always re-enable all five buttons when we show the panel
+        if (isPaused)
         {
+            // Make sure panel itself is enabled first
+            pausePanel.SetActive(true);
+
+            // Then explicitly turn on its five child buttons:
+            foreach (Transform child in pausePanel.transform)
+                child.gameObject.SetActive(true);
+        }
+        else
+        {
+            pausePanel.SetActive(false);
             settingsPanel.SetActive(false);
             savePanel.SetActive(false);
             loadPanel.SetActive(false);
         }
     }
+
 
     // Public hooks for buttons
     public void BtnResume() => TogglePause();
