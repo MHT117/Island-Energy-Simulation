@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public static class SaveSystem
 {
-    // at top of SaveSystem class, under PathForSlot:
+    //---------- Overloads for “quick” single-slot save/load (buttons use these) ----------
     public static void SaveGame() => SaveGame(1);
     public static bool LoadGame() => LoadGame(1);
 
-    // helper to name each slot file
+    //---------- Helpers for slot file naming ----------
     static string PathForSlot(int slot) =>
         Path.Combine(Application.persistentDataPath, $"islandSave_slot{slot}.json");
 
@@ -17,12 +17,15 @@ public static class SaveSystem
 
     public static void DeleteSave(int slot)
     {
-        var path = PathForSlot(slot);
-        if (File.Exists(path)) File.Delete(path);
+        string path = PathForSlot(slot);
+        if (File.Exists(path))
+            File.Delete(path);
     }
 
+    //---------- Slot-based save ----------
     public static void SaveGame(int slot)
     {
+        // 1) Gather up all the primitives
         var data = new SaveData
         {
             day = TimeSystem.I.Day,
@@ -35,10 +38,9 @@ public static class SaveSystem
             rngState = Random.state.GetHashCode()
         };
 
-        // record all energy sources
+        // 2) Record every EnergySourceInstance
         var sources = Object.FindObjectsByType<EnergySourceInstance>(
-            FindObjectsInactive.Exclude,
-            FindObjectsSortMode.None
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None
         );
         foreach (var src in sources)
         {
@@ -50,10 +52,9 @@ public static class SaveSystem
             });
         }
 
-        // record all consumers
+        // 3) Record every ConsumerInstance
         var consumers = Object.FindObjectsByType<ConsumerInstance>(
-            FindObjectsInactive.Exclude,
-            FindObjectsSortMode.None
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None
         );
         foreach (var con in consumers)
         {
@@ -65,24 +66,26 @@ public static class SaveSystem
             });
         }
 
-        var json = JsonUtility.ToJson(data, true);
+        // 4) Serialize and write out
+        string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(PathForSlot(slot), json);
         Debug.Log($"Game saved to {PathForSlot(slot)}");
     }
 
+    //---------- Slot-based load ----------
     public static bool LoadGame(int slot)
     {
-        var path = PathForSlot(slot);
-        if (!File.Exists(path)) return false;
+        string path = PathForSlot(slot);
+        if (!File.Exists(path))
+            return false;
 
-        var data = JsonUtility.FromJson<SaveData>(
-            File.ReadAllText(path)
-        );
+        // 1) Read and deserialize
+        string json = File.ReadAllText(path);
+        var data = JsonUtility.FromJson<SaveData>(json);
 
-        // clear existing buildings
+        // 2) Clear existing buildings
         var allGOs = Object.FindObjectsByType<GameObject>(
-            FindObjectsInactive.Exclude,
-            FindObjectsSortMode.None
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None
         );
         foreach (var go in allGOs)
         {
@@ -90,20 +93,20 @@ public static class SaveSystem
                 Object.Destroy(go);
         }
 
-        // restore RNG
+        // 3) Restore RNG
         Random.InitState(data.rngState);
 
-        // restore time & money
+        // 4) Restore time & money
         TimeSystem.I.Day = data.day;
         TimeSystem.I.MinuteOfDay = data.minute;
         GameManager.I.SetMoney(data.money);
 
-        // restore resilience
+        // 5) Restore resilience
         ResilienceManager.I.ForceSet(
             data.rSec, data.rEq, data.rSus, data.rAda
         );
 
-        // recreate buildings
+        // 6) Recreate buildings
         var grid = Object.FindAnyObjectByType<Grid>();
         foreach (var rec in data.buildings)
         {
@@ -113,7 +116,7 @@ public static class SaveSystem
             PlacementController.I.InstantiateFromSO(so, worldPos, true);
         }
 
-        Debug.Log($"Loaded save from {path}");
+        Debug.Log($"Game loaded from {path}");
         return true;
     }
 }

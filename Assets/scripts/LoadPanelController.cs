@@ -13,6 +13,7 @@ public class LoadPanelController : MonoBehaviour
 
     public void ClickSlot(int slot)
     {
+        Debug.Log($"[LoadPanel] ClickSlot({slot})");
         if (SaveSystem.LoadGame(slot))
         {
             Time.timeScale = 1;
