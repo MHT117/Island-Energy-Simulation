@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using TMPro;
+using System.Linq;
 
 public class PlacementController : MonoBehaviour
 {
@@ -80,6 +81,7 @@ public class PlacementController : MonoBehaviour
 
     void Update()
     {
+        
         if (currentSourceSO != null || currentConsumerSO != null)
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
@@ -117,6 +119,19 @@ public class PlacementController : MonoBehaviour
             {
                 if (currentSourceSO != null)
                 {
+                    if (currentSourceSO.maxPlantsAllowed > 0)
+                    {
+                        int alreadyPlaced = Object.FindObjectsByType<EnergySourceInstance>(FindObjectsSortMode.None)
+                                .Count(i => i.data == currentSourceSO);
+                        if (alreadyPlaced >= currentSourceSO.maxPlantsAllowed)
+                        {
+                            Debug.LogWarning(
+                              $"Cannot place more than {currentSourceSO.maxPlantsAllowed} " +
+                              $"{currentSourceSO.displayName} on the island."
+                            );
+                          
+                        }
+                    }
                     var go = Instantiate(currentSourceSO.prefab, centre, Quaternion.identity);
                     GameManager.I.Spend(currentSourceSO.buildCost);
                     var src = go.AddComponent<EnergySourceInstance>();
@@ -183,10 +198,12 @@ public class PlacementController : MonoBehaviour
 
     void CancelPlacement()
     {
+        Destroy(ghost);
         currentSourceSO = null;
         currentConsumerSO = null;
-        if (ghost) Destroy(ghost);
     }
+
+
 
     private IEnumerator FlashMoneyLabel()
     {
