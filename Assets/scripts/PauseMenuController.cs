@@ -60,6 +60,6 @@ public class PauseMenuController : MonoBehaviour
     public void BtnQuit()
     {
         Debug.Log("[PauseMenu] Quit");
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }

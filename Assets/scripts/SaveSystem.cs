@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
 
 public static class SaveSystem
 {
-    //---------- Overloads for “quick” single-slot save/load (buttons use these) ----------
+    //---------- Overloads for â€œquickâ€ single-slot save/load (buttons use these) ----------
     public static void SaveGame() => SaveGame(1);
     public static bool LoadGame() => LoadGame(1);
 
@@ -12,7 +12,7 @@ public static class SaveSystem
     static string PathForSlot(int slot) =>
         Path.Combine(Application.persistentDataPath, $"islandSave_slot{slot}.json");
 
-    public static bool HasSave(int slot) =>
+  /*  public static bool HasSave(int slot) =>
         File.Exists(PathForSlot(slot));
 
     public static void DeleteSave(int slot)
@@ -21,7 +21,7 @@ public static class SaveSystem
         if (File.Exists(path))
             File.Delete(path);
     }
-
+  */
     //---------- Slot-based save ----------
     public static void SaveGame(int slot)
     {
@@ -118,5 +118,26 @@ public static class SaveSystem
 
         Debug.Log($"Game loaded from {path}");
         return true;
+    }
+
+    //  only a single HasSave method
+    public static bool HasSave(int slot)
+        => File.Exists(PathForSlot(slot));
+
+    // Delete all slots
+    public static void DeleteAllSaves()
+    {
+        for (int i = 1; i <= 3; i++)
+            if (HasSave(i))
+                File.Delete(PathForSlot(i));
+    }
+
+    // Try loading slots 1 to 3; return true if any load succeeds
+    public static bool LoadLatest()
+    {
+        for (int i = 1; i <= 3; i++)
+            if (LoadGame(i))
+                return true;
+        return false;
     }
 }

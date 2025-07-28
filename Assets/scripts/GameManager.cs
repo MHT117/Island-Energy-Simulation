@@ -68,8 +68,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static bool LoadLatest()
+    {
+        for (int i = 1; i <= 3; i++)
+            if (SaveSystem.LoadGame(i))
+                return true;
+        return false;
+    }
     void Start()
     {
+        if (SaveSystem.LoadLatest())
+            return;  // skips tutorial or fresh‐game logic
+
         // charge maintenance each new day
         TimeSystem.I.OnNewDay += ChargeDailyMaintenance;
     }
