@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
   m_Name: PowerPlant_SO
   m_EditorClassIdentifier: 
+  maxPlantsAllowed: 2
   prefab: {fileID: 4625529954267164299, guid: 09042d0648bfd5740833d876e9bb3fd4, type: 3}
   displayName: PowerPlant
   sprite: {fileID: 2075872620782922257, guid: 04398630df2efe948bc9be370a04b35b, type: 3}
   buildCost: 100
+  maintenancePerDay: 10
   maintenanceDay: 5
   baseOutputMW: 1
   sec: 1.8

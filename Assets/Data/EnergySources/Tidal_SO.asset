@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
   m_Name: Tidal_SO
   m_EditorClassIdentifier: 
+  maxPlantsAllowed: 2
   prefab: {fileID: 4625529954267164299, guid: 18046811276c9844284b163b07114226, type: 3}
   displayName: Hydro
   sprite: {fileID: 6076168265030475002, guid: cd69ee4e37f1460418916e95ec3209c3, type: 3}

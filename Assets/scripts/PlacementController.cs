@@ -14,6 +14,10 @@ public class PlacementController : MonoBehaviour
     [SerializeField] private Tilemap groundMap;  // Solar, Wind, Biomass, etc.
     [SerializeField] private Tilemap cityMap;    // Houses, Shops
 
+    private bool canPlaceMorePowerPlants = true;
+
+        
+
     [Header("Floating Text Prefab")]
     [SerializeField] private FloatTextUI floatTextPrefab;
     [SerializeField] private Canvas uiCanvas;
@@ -123,7 +127,11 @@ public class PlacementController : MonoBehaviour
                     {
                         int alreadyPlaced = Object.FindObjectsByType<EnergySourceInstance>(FindObjectsSortMode.None)
                                 .Count(i => i.data == currentSourceSO);
-                        if (alreadyPlaced >= currentSourceSO.maxPlantsAllowed)
+                        if (alreadyPlaced >= currentSourceSO.maxPlantsAllowed * 2)
+                        { 
+                        canPlaceMorePowerPlants = false;
+                        }
+                        if (alreadyPlaced >= currentSourceSO.maxPlantsAllowed * 2)
                         {
                             Debug.LogWarning(
                               $"Cannot place more than {currentSourceSO.maxPlantsAllowed} " +
@@ -132,25 +140,28 @@ public class PlacementController : MonoBehaviour
                           
                         }
                     }
-                    var go = Instantiate(currentSourceSO.prefab, centre, Quaternion.identity);
-                    GameManager.I.Spend(currentSourceSO.buildCost);
-                    var src = go.AddComponent<EnergySourceInstance>();
-                    src.data = currentSourceSO;
-                    PowerManager.I.RegisterSource(src);
+                    if (canPlaceMorePowerPlants)
+                    {
+                        var go = Instantiate(currentSourceSO.prefab, centre, Quaternion.identity);
+                        GameManager.I.Spend(currentSourceSO.buildCost);
+                        var src = go.AddComponent<EnergySourceInstance>();
+                        src.data = currentSourceSO;
+                        PowerManager.I.RegisterSource(src);
 
-                    ResilienceManager.I.AddScores(
-                        currentSourceSO.sec,
-                        currentSourceSO.eq,
-                        currentSourceSO.sus,
-                        currentSourceSO.ada
-                    );
+                        ResilienceManager.I.AddScores(
+                            currentSourceSO.sec,
+                            currentSourceSO.eq,
+                            currentSourceSO.sus,
+                            currentSourceSO.ada
+                        );
 
-                    // Floating text
-                    Vector3 worldPos = go.transform.position + Vector3.up * 0.5f;
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    var ftxt = Instantiate(floatTextPrefab, uiCanvas.transform);
-                    ftxt.GetComponent<RectTransform>().position = screenPos;
-                    ftxt.Init($"{src.CurrentOutputMW():0.0} MW");
+                        // Floating text
+                        Vector3 worldPos = go.transform.position + Vector3.up * 0.5f;
+                        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                        var ftxt = Instantiate(floatTextPrefab, uiCanvas.transform);
+                        ftxt.GetComponent<RectTransform>().position = screenPos;
+                        ftxt.Init($"{src.CurrentOutputMW():0.0} MW");
+                    }
                 }
                 else
                 {

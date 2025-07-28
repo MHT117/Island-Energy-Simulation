@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
   m_Name: Hydro_SO
   m_EditorClassIdentifier: 
+  maxPlantsAllowed: 2
   prefab: {fileID: 4625529954267164299, guid: e97abc3b6071e9c43ad1fa411a2fce0e, type: 3}
   displayName: Hydro
   sprite: {fileID: 7455597224168515109, guid: 04398630df2efe948bc9be370a04b35b, type: 3}
   buildCost: 100
+  maintenancePerDay: 10
   maintenanceDay: 5
   baseOutputMW: 1
   sec: 2

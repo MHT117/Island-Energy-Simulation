@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d1fdeadb816f8469055fce97e32eb4, type: 3}
   m_Name: ModernBiomass_SO
   m_EditorClassIdentifier: 
+  maxPlantsAllowed: 3
   prefab: {fileID: 4625529954267164299, guid: 9e5814326a4d06947a3fb3135e7298ca, type: 3}
   displayName: Modern Biomass
   sprite: {fileID: -5485806406290453763, guid: 8fdca4218c5e31d4ab6f56d87b11a06d, type: 3}
