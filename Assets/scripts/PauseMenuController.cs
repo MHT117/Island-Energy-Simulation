@@ -12,9 +12,15 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
+        // if the tutorial is running, no one can pause yet
+        if (GameManager.I.tutorialActive)
+            return;
+
+        // otherwise, pressing Escape still toggles the pause menu as before
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePause();
     }
+
 
     void TogglePause()
     {

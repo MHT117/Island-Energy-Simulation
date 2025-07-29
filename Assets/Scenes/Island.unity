@@ -91396,6 +91396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6687ff30069edce419539fb0c91f2d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialActive: 0
   startingMoney: 2000
   moneyText: {fileID: 1297772731}
   pauseOnBudgetFail: 0
@@ -94992,7 +94993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyField: {fileID: 1776986195}
-  windField: {fileID: 593146856}
   dayLenField: {fileID: 2032299909}
 --- !u!114 &1599339013
 MonoBehaviour:

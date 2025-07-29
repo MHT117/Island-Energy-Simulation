@@ -43,6 +43,8 @@ public class CameraPanZoom : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.I.tutorialActive)
+            return;
         // ─── ZOOM ────────────────────────────────────────────────────────
         float scroll = Input.mouseScrollDelta.y;
         if (Mathf.Abs(scroll) > 0.01f)

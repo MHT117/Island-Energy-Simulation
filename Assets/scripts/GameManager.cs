@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager I { get; private set; }
+    [HideInInspector] public bool tutorialActive = false;
 
     [Header("Economy")]
     public int startingMoney = 1000;
@@ -76,9 +77,16 @@ public class GameManager : MonoBehaviour
         return false;
     }
     void Start()
-    {
-        if (SaveSystem.LoadLatest())
-            return;  // skips tutorial or fresh‐game logic
+    { // attempt to load an existing save; returns true if some slot loaded
+        bool didLoad = SaveSystem.LoadLatest();
+        if (!didLoad)
+        {
+            Debug.Log("[Tutorial] spawning TutorialCanvas prefab");
+            tutorialActive = true;
+            Time.timeScale = 0f;
+            Instantiate(Resources.Load<GameObject>("TutorialCanvas"));
+            return;
+        }
 
         // charge maintenance each new day
         TimeSystem.I.OnNewDay += ChargeDailyMaintenance;
