@@ -91339,6 +91339,7 @@ GameObject:
   - component: {fileID: 894234981}
   - component: {fileID: 894234982}
   - component: {fileID: 894234983}
+  - component: {fileID: 894234984}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -91512,6 +91513,20 @@ MonoBehaviour:
   settingsPanel: {fileID: 1599339010}
   savePanel: {fileID: 1281884498}
   loadPanel: {fileID: 1369580518}
+--- !u!114 &894234984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894234973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c632100837fa366478dc730fdec2ff21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptPrefab: {fileID: 3600988661096748629, guid: c18b3c8c86989594eab16cb187f0c6fe, type: 3}
+  uiCanvas: {fileID: 1535641149}
 --- !u!1 &942979338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6008339930146980959, guid: 98070bfd44f506641ba6ce696c0c64c1, type: 3}
