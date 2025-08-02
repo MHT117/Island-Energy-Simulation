@@ -8,7 +8,7 @@ public class PromptManager : MonoBehaviour
     public static PromptManager I { get; private set; }
 
     [SerializeField] GameObject promptPrefab;   // assign the PromptPanel prefab here
-    [SerializeField] Canvas uiCanvas;           // your main UI canvas
+    [SerializeField] Canvas uiCanvas;           //  main UI canvas
 
     // day  question mapping
     readonly Dictionary<int, string> scheduler = new()
@@ -45,6 +45,9 @@ public class PromptManager : MonoBehaviour
         // block all inputs
         GameManager.I.tutorialActive = true;
 
+        // ← pause the time here
+        Time.timeScale = 0f;
+
         // instantiate panel under the UI canvas
         activePanel = Instantiate(promptPrefab, uiCanvas.transform);
 
@@ -75,10 +78,14 @@ public class PromptManager : MonoBehaviour
             Destroy(activePanel);
             activePanel = null;
 
+            // ← resume time here
+            Time.timeScale = 1f;
+
             // unlock inputs
             GameManager.I.tutorialActive = false;
         });
     }
+
 
     // called by LoadGame to restore saved answers
     public void SetLoadedAnswers(List<PromptAnswer> list)
