@@ -91417,7 +91417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realSecondsPerGameMinute: 0.1
-  MinutesPerDay: 100
+  MinutesPerDay: 30
 --- !u!114 &894234978
 MonoBehaviour:
   m_ObjectHideFlags: 0
