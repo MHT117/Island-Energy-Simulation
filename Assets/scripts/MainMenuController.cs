@@ -27,10 +27,8 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(1);      // game scene auto-loads latest save
     }
 
-    public void BtnCredits()
-    {
-        SceneManager.LoadScene("Credits");
-    }
+    public void BtnCredits() => SceneManager.LoadScene("Credits");
+
 
     public void BtnQuit()
     {

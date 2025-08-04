@@ -83,7 +83,17 @@ public class PromptManager : MonoBehaviour
 
             // unlock inputs
             GameManager.I.tutorialActive = false;
+
+            if (day == 30)
+                StartCoroutine(LoadCreditsAfterClose());
         });
+    }
+
+    private System.Collections.IEnumerator LoadCreditsAfterClose()
+    {
+        // wait a moment so the panel finishes its hide animation
+        yield return new WaitForSecondsRealtime(0.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 
 
