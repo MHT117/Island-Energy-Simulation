@@ -474,16 +474,29 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ENERGY ISLAND
 
-    
+
 
     Lead Developer
 
     K M Mehedi Hassan
 
-    
 
     Game
-    Design
+    conceptualization,
+
+
+    Research and development
+
+    Joan Pauline Tulabo
+
+
+    Game
+    development
+
+    K M Hassan
+
+
+    Game Design
 
 
 
@@ -491,11 +504,12 @@ MonoBehaviour:
 
     Kenney.nl assets
 
-    
 
-    
 
-    Special Thanks
+
+
+    Special
+    Thanks
 
 
 '
@@ -531,7 +545,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
