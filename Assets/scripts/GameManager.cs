@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public GameObject endGamePanel;
     public TextMeshProUGUI endGameLabel;
 
+    [HideInInspector] public bool inPlanningPhase = false;
+
+    [SerializeField] GameObject planningOverlay;
+
     bool gameEnded = false;
 
     int _money;
@@ -172,5 +176,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.LogWarning($"{st.displayName} is unhappy (<{st.loseBelow}%). Game over.");
         TriggerEndGame(false);
+    }
+
+    public void EnterPlanningPhase()
+    {
+        inPlanningPhase = true;
+        Time.timeScale = 0f;                         // freeze time
+        if (planningOverlay != null) planningOverlay.SetActive(true);
+    }
+
+    public void BeginRun()                           // called by the GO button
+    {
+        inPlanningPhase = false;
+        Time.timeScale = 1f;
+        if (planningOverlay != null) planningOverlay.SetActive(false);
     }
 }
