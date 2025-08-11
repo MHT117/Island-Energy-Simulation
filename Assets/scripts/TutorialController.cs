@@ -38,6 +38,7 @@ public class TutorialController : MonoBehaviour
             {
                 // final slide → dismiss tutorial
                 GameManager.I.tutorialActive = false;
+                GameManager.I.EnterPlanningPhase();
                 Time.timeScale = 1f;            // restore time
                 Destroy(gameObject);
             }
