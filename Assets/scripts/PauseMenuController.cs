@@ -13,11 +13,7 @@ public class PauseMenuController : MonoBehaviour
     void Update()
     {
         // if the tutorial is running, no one can pause yet
-        if (GameManager.I.tutorialActive)
-            return;
-        // if a prompt or tutorial is blocking UI, bail out
-        if (GameManager.I.tutorialActive) return;
-
+        if (GameManager.I != null && GameManager.I.tutorialActive) return;
 
         // otherwise, pressing Escape still toggles the pause menu as before
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,7 +24,8 @@ public class PauseMenuController : MonoBehaviour
     void TogglePause()
     {
         isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0 : 1;
+        if (isPaused) Time.timeScale = 0f;
+        else Time.timeScale = GameManager.I.inPlanningPhase ? 0f : 1f;
 
         // Activate root panel only
         pausePanel.SetActive(isPaused);

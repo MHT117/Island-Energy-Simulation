@@ -85,7 +85,8 @@ public class PlacementController : MonoBehaviour
 
     void Update()
     {
-        
+        if (GameManager.I.tutorialActive) return;
+
         if (currentSourceSO != null || currentConsumerSO != null)
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;

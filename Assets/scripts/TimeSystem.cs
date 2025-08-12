@@ -22,6 +22,9 @@ public class TimeSystem : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.I != null && (GameManager.I.tutorialActive || GameManager.I.inPlanningPhase))
+            return;
+
         accumulator += Time.deltaTime;
         if (accumulator < realSecondsPerGameMinute) return;
         accumulator -= realSecondsPerGameMinute;
