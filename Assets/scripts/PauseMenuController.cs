@@ -45,12 +45,12 @@ public class PauseMenuController : MonoBehaviour
         TogglePause();
     }
 
-    public void BtnSettings()
+ /*   public void BtnSettings()
     {
         Debug.Log("[PauseMenu] Open Settings");
         settingsPanel.SetActive(true);
     }
-
+   */
     public void BtnSave()
     {
         Debug.Log("[PauseMenu] Open Save");
@@ -68,4 +68,21 @@ public class PauseMenuController : MonoBehaviour
         Debug.Log("[PauseMenu] Quit");
         SceneManager.LoadScene("MainMenu");
     }
+    public void BtnSettings()
+    {
+        Debug.Log("[PauseMenu] Open Settings");
+        pausePanel.SetActive(false);           // hide the main list
+        settingsPanel.SetActive(true);
+        settingsPanel.transform.SetAsLastSibling(); // ensure on top
+    }
+
+    public void CloseSubpanel()
+    {
+        // called by Apply/Cancel buttons
+        settingsPanel.SetActive(false);
+        savePanel.SetActive(false);
+        loadPanel.SetActive(false);
+        pausePanel.SetActive(true);
+    }
+
 }
