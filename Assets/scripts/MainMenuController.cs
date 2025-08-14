@@ -13,6 +13,7 @@ public class MainMenuController : MonoBehaviour
                     || SaveSystem.HasSave(2)
                     || SaveSystem.HasSave(3);
         continueBtn.interactable = hasSave;
+        if (AudioManager.I) AudioManager.I.PlayMusic(AudioManager.I.menuMusic, 1f);
     }
 
     // called by the Start button

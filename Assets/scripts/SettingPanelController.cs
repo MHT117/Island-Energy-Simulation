@@ -1,16 +1,20 @@
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 public class SettingsPanelController : MonoBehaviour
 {
     [SerializeField] TMP_InputField moneyField;
     [SerializeField] TMP_InputField dayLenField;
+    [SerializeField] Slider musicSlider;
+
 
     void OnEnable()
     {
         // Populate the two fields when the panel opens
         moneyField.text = GameManager.I.startingMoney.ToString();
         dayLenField.text = TimeSystem.I.realSecondsPerGameMinute.ToString("0.##");
+        if (AudioManager.I && musicSlider)
+            musicSlider.value = AudioManager.I.Volume;
     }
 
     public void BtnApply()
@@ -31,4 +35,10 @@ public class SettingsPanelController : MonoBehaviour
         // Simply close the panel
         gameObject.SetActive(false);
     }
+
+    public void OnMusicSliderChanged(float v)
+    {
+        if (AudioManager.I) AudioManager.I.SetMusicVolume(v);
+    }
+
 }

@@ -183,6 +183,7 @@ public class GameManager : MonoBehaviour
         inPlanningPhase = true;
         Time.timeScale = 0f;                         // freeze time
         if (planningOverlay != null) planningOverlay.SetActive(true);
+        if (AudioManager.I) AudioManager.I.PlayMusic(AudioManager.I.gameMusic, 1.2f);// audio
     }
 
     public void BeginRun()                           // called by the GO button
