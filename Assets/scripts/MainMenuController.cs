@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] Button continueBtn;
-
+    [SerializeField] GameObject buttonPanel;       // ButtonPanel
+    [SerializeField] GameObject mainMenuSettings;  // MainMenuSettings panel
     void Start()
     {
         // only enable “Continue” if any save exists
@@ -34,5 +35,16 @@ public class MainMenuController : MonoBehaviour
     public void BtnQuit()
     {
         Application.Quit();
+    }
+
+    public void BtnSettingsOpen()
+    {
+        buttonPanel.SetActive(false);
+        mainMenuSettings.SetActive(true);
+    }
+    public void BtnSettingsClose()
+    {
+        mainMenuSettings.SetActive(false);
+        buttonPanel.SetActive(true);
     }
 }

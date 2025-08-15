@@ -7,18 +7,22 @@ public class EventToastUI : MonoBehaviour
 {
     public Image icon;
     public TextMeshProUGUI label;
-    public float showSeconds = 3f;
+    public float showSeconds = 5f;
 
     CanvasGroup cg;
-    Vector3 startPos, endPos;
+    RectTransform rt;
+    Vector2 startPos, endPos;
 
     void Awake()
     {
         cg = GetComponent<CanvasGroup>();
-        // stash the “hidden” and “shown” local positions
-        startPos = transform.localPosition + Vector3.up * 100;
-        endPos = transform.localPosition;
-        transform.localPosition = startPos;
+        rt = (RectTransform)transform;
+
+        // slide from slightly above the final anchored position
+        endPos = rt.anchoredPosition;
+        startPos = endPos + new Vector2(0f, 100f);
+        rt.anchoredPosition = startPos;
+        cg.alpha = 0f;
     }
 
     public void Show(ClimateEventSO ev)
@@ -32,29 +36,29 @@ public class EventToastUI : MonoBehaviour
     IEnumerator Animate()
     {
         // fade + slide in (0.3s)
-        float t = 0;
+        float t = 0f;
         while (t < 0.3f)
         {
             t += Time.unscaledDeltaTime;
-            cg.alpha = t / 0.3f;
-            transform.localPosition = Vector3.Lerp(startPos, endPos, t / 0.3f);
+            float p = t / 0.3f;
+            cg.alpha = p;
+            rt.anchoredPosition = Vector2.Lerp(startPos, endPos, p);
             yield return null;
         }
-        cg.alpha = 1;
-        transform.localPosition = endPos;
+        cg.alpha = 1f; rt.anchoredPosition = endPos;
 
-        // wait
         yield return new WaitForSecondsRealtime(showSeconds);
 
-        // fade out
-        t = 0;
+        // fade out (0.3s)
+        t = 0f;
         while (t < 0.3f)
         {
             t += Time.unscaledDeltaTime;
-            cg.alpha = 1 - t / 0.3f;
+            float p = t / 0.3f;
+            cg.alpha = 1f - p;
             yield return null;
         }
-        cg.alpha = 0;
-        transform.localPosition = startPos;
+        cg.alpha = 0f;
+        rt.anchoredPosition = startPos;
     }
 }

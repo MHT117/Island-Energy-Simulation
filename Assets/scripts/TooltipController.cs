@@ -6,7 +6,7 @@ using System.Collections;
 public class TooltipController : MonoBehaviour,
     IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] ScriptableObject data;     // drag your SO here
+    [SerializeField] ScriptableObject data;     // drag SO here
 
     // static refs: one shared panel + label
     static GameObject panel;
@@ -48,29 +48,57 @@ public class TooltipController : MonoBehaviour,
 
     public void OnPointerEnter(PointerEventData e)
     {
-        if (data == null) return;
+        if (!data || panel == null) return;
 
-        // remove suffix/prefix to get nice name
-        string nameOnly = data.name
-            .Replace("_SO", "")
-            .Replace("_", " ");
-        label.text = nameOnly;
+        // Base title (pretty name)
+        string nameOnly = data.name.Replace("_SO", "").Replace("_", " ");
+
+        // Try to enrich if this is an EnergySourceSO
+        string extra = BuildExtraLine(data);
+
+        label.text = string.IsNullOrEmpty(extra) ? nameOnly : $"{nameOnly}\n<size=80%>{extra}</size>";
         panel.SetActive(true);
 
-        // cancel any pending hide
         if (hideCo != null) StopCoroutine(hideCo);
     }
 
     public void OnPointerExit(PointerEventData e)
     {
-        // optional delay before hiding
         if (hideCo != null) StopCoroutine(hideCo);
         hideCo = StartCoroutine(HideDelay());
     }
 
     IEnumerator HideDelay()
     {
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.15f);
         panel.SetActive(false);
+    }
+
+    // --- helpers for the tooltip to show the values ---
+    string BuildExtraLine(ScriptableObject so)
+    {
+        var t = so.GetType();
+        if (t.Name != "EnergySourceSO") return "";
+
+        int cost = GetInt(so, "buildCost", -1);
+        float mw = GetFloat(so, "baseOutputMW", -1f);
+        int maint = GetInt(so, "maintenanceDay", -1);     // if daily maintenance is kept
+
+        string s = "";
+        if (cost >= 0) s += $"Cost ${cost}";
+        if (mw >= 0) s += (s == "" ? "" : "  |  ") + $"Output {mw:0.##} MW";
+        if (maint >= 0) s += $"  |  Maintanance ${maint}/day";
+        return s;
+    }
+
+    int GetInt(object o, string field, int def)
+    {
+        var f = o.GetType().GetField(field);
+        return f != null && f.FieldType == typeof(int) ? (int)f.GetValue(o) : def;
+    }
+    float GetFloat(object o, string field, float def)
+    {
+        var f = o.GetType().GetField(field);
+        return f != null && f.FieldType == typeof(float) ? (float)f.GetValue(o) : def;
     }
 }
